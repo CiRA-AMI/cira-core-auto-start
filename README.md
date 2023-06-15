@@ -16,3 +16,8 @@ gnome-terminal -e "<your cira_auto_start.py path>"
 
 ## Windows
 https://docs.google.com/presentation/d/1LF5O2tB2V_mVrEfttdyCHPcrw3IuXdPOxKlpdGF5mj8/edit?pli=1#slide=id.p
+
+
+# cira-core-auto-restart
+- ifelse code : https://raw.githubusercontent.com/CiRA-AMI/cira-core-auto-start/main/ifelse_check_time.js
+![autorestart](https://github.com/CiRA-AMI/cira-core-auto-start/blob/main/pic/autorestart.jpg?raw=true?inline=false)
