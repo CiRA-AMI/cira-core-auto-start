@@ -9,16 +9,16 @@ username = getpass.getuser()
 print('user : ', username)
 
 # CiRA CORE Parameter
-FLOW_FILE = "BBBB"              # .flow or .npj file path
+FLOW_FILE = ""                  # .flow or .npj file path for example : "/home/cira/cira_ai.flow"
 HIDE_TOOLBAR = "true"           # set "true" to "false"
 LOCK_CIRA_CORE = "false"        # set "true" to "false" : lock/unlock by control+L and type password
 SHOW_FULLSCREEN = "true"        # set "true" to "false" : exit by control+F
 
 # CiRA Arduino IO Parameter
-USER_PASS = ""   # password of your user
+USER_PASS = ""                  # password of your user
 RUN_ARDUINO = False
 
-#time.sleep(10)
+time.sleep(10)
 
 new_proc = Popen(["rosversion", "-d"], stdout=subprocess.PIPE, text=True)
 ros_version = str(new_proc.communicate()[0]).replace("\n", "")
