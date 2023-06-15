@@ -5,6 +5,7 @@
 ![cira_core_param](https://github.com/CiRA-AMI/cira-core-auto-start/blob/main/pic/parameter.png?raw=true?inline=false)
 
 - Use AutoRun in CiRA CORE flow
+![auto_run](https://github.com/CiRA-AMI/cira-core-auto-start/blob/main/pic/autorun.png?raw=true?inline=false)
 
 
 ## Windows
