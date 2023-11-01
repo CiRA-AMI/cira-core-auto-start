@@ -15,7 +15,7 @@ gnome-terminal -e "<your cira_auto_start.py path>"
 
 
 ## Windows
-https://docs.google.com/presentation/d/1LF5O2tB2V_mVrEfttdyCHPcrw3IuXdPOxKlpdGF5mj8/edit?pli=1#slide=id.p
+https://docs.google.com/presentation/d/1fiPiRoGRsluzPUfvnJyVmxTUNhSB8xbmHPOH9Qrk5sI/edit?usp=sharing
 
 
 # cira-core-auto-restart
