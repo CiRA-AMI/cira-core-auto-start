@@ -18,7 +18,12 @@ SHOW_FULLSCREEN = "true"        # set "true" to "false" : exit by control+F
 USER_PASS = ""                  # password of your user
 RUN_ARDUINO = False
 
+#CiRA GenICam server
+RUN_GENICAM = False
+
 time.sleep(10)
+
+import os
 
 def find_ros_version():
     preferred_versions = ['noetic', 'melodic']
@@ -53,9 +58,18 @@ time.sleep(2)
 ###############
 
 if RUN_ARDUINO :
-    # 2 run arduino
+    # run arduino
     cmd = "source ~/.bashrc && LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib && export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/opt/qt511/lib && "
     cmd = cmd + f"source /opt/ros/{ros_version}/setup.bash && source ~/.cira_core_install/cira_libs_ws/install/setup.bash --extend && while true; do rosrun cira_arduino_io cira_arduino_io_run _pass:={USER_PASS}; sleep 1s; done ;$SHELL"
     print("cmd : ", cmd)
-    Popen(["gnome-terminal", '--' , '/bin/bash', '-c' , cmd])
+    Popen(["gnome-terminal", '--' , 'bash', '-c' , cmd])
+    time.sleep(2)
+    
+##################
+if RUN_GENICAM :
+    # run GenICam
+    cmd = "source ~/.bashrc && LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib && export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/opt/qt511/lib && "
+    cmd = cmd + f"source /opt/ros/{ros_version}/setup.bash && source ~/.cira_core_install/cira_libs_ws/install/setup.bash --extend && while true; do rosrun cira_genicam_server cira_genicam_server_run ; sleep 1s; done ;$SHELL"
+    print("cmd : ", cmd)
+    Popen(["gnome-terminal", '--' , 'bash', '-c' , cmd])
     time.sleep(2)
