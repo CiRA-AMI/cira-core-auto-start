@@ -9,7 +9,7 @@
 
 - Add Startup Program command : 
 ```bash
-gnome-terminal -e "<your cira_auto_start.py path>"
+gnome-terminal -e "python3 <your cira_auto_start.py path>"
 ```
 ![startup](https://github.com/CiRA-AMI/cira-core-auto-start/blob/main/pic/startup.jpg?raw=true?inline=false)
 
