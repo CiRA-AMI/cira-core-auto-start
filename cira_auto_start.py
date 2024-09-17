@@ -14,6 +14,9 @@ HIDE_TOOLBAR = "true"           # set "true" to "false"
 LOCK_CIRA_CORE = "false"        # set "true" to "false" : lock/unlock by control+L and type password
 SHOW_FULLSCREEN = "true"        # set "true" to "false" : exit by control+F
 
+# Additional CiRA CORE Parameter
+UI_PLATFORM = '' # no GUI use '--platform offscreen'  ,  use vnc '--platform vnc:size=1280x720' and you can use VNCViewer connect port 5900 to see CiRA CORE
+
 # CiRA Arduino IO Parameter
 USER_PASS = ""                  # password of your user
 RUN_ARDUINO = False
@@ -50,7 +53,7 @@ time.sleep(3)
 # 3 run cira core
 cmd = "source ~/.bashrc && LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib && export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/opt/qt511/lib && "
 cmd = cmd + f"source /opt/ros/{ros_version}/setup.bash && source ~/.cira_core_install/cira_libs_ws/install/setup.bash --extend && "
-cmd = cmd + f"while true; do rosrun cira_core cira_core_run  _file:=\'{FLOW_FILE}\' _hide_toolbar:={HIDE_TOOLBAR} _lock:={LOCK_CIRA_CORE} _fullscreen:={SHOW_FULLSCREEN}; sleep 1s; done ;$SHELL"
+cmd = cmd + f"while true; do rosrun cira_core cira_core_run {UI_PLATFORM} _file:=\'{FLOW_FILE}\' _hide_toolbar:={HIDE_TOOLBAR} _lock:={LOCK_CIRA_CORE} _fullscreen:={SHOW_FULLSCREEN}; sleep 1s; done ;$SHELL"
 print("cmd : ", cmd)
 Popen(["gnome-terminal", '--' , 'bash', '-c' , cmd])
 time.sleep(2)
